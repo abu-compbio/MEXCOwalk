@@ -17,6 +17,9 @@ There are two files for the graph construction: the network edges file and the n
 both files are located in data folder
 
 1. The PPI network file:
+
+the file is located at data/hint_edge_file.txt
+
 ```
 node_i_Index node_j_Index weight
 0 1 1
@@ -24,23 +27,24 @@ node_i_Index node_j_Index weight
 ```
 
 2. The nodes to index file mapping:
+
+the file is located at data/hint_index_file.txt
 ```
 index GeneName
 1 A1BG
 2 A1CF
 ```
 
-### Mutations Data
+### Mutation Data
 
-The files needed for calculating the mutex and coverage scores are processed from src_snvs.tsv and src_cnas.tsv files
+The files needed for calculating the mutex and coverage scores are processed from src_snvs.tsv and src_cnas.tsv files.
+
+Note: the files are tab separated
 
 The files are:
 
-NOTE: the files are tab separated
-
-1. The list of patients whose gene ~~i~~ is mutated:
+1. Gene and its list of patients where that gene is mutated:
 the file is located at data/genes_vs_patients_indices_gen_paran.txt
-
 
 ```
 RNF14	109	241	...
@@ -61,15 +65,29 @@ TCGA-DK-A1A6	3
 ```
 the ids starts from 1
 
+3. The gene and its corresponding frequency:
+
+This file contains the mutation frequncies, which are assigned as heats during the random walk.
+
+the file is located at  data/pan12gene2freq.txt. the file was downloaded from [here](https://github.com/raphael-group/hotnet2/tree/master/paper/data/heats)
+
+```
+A1BG 0.00353697749196
+A2M 0.0128617363344
+A4GALT 0.00064308681672
+
+```
+
 ### Cosmic genes
 
-The comic genes are loaded from Census_allTue_May_23_12-08-15_2017.tsv file located in data
+The cosmic genes are loaded from Census_allTue_May_23_12-08-15_2017.tsv file, which is located in data folder.
 
 
 
 ## **Run**
 
-There are two bash scripts, one for running the modules discovery algorithm, the other for evaluation
+There are two bash scripts, one for running the modules discovery algorithm, the other for evaluation.
+
 For more details on the execution parameters please refer to the bash files.
 
 1. Modules discovery:
@@ -82,3 +100,8 @@ sh execute_all.sh
 ```
 sh evaluate_all.sh
 ```
+
+## **Knearest**
+
+
+## **CoxPh analysis**
