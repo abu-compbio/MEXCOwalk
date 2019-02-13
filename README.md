@@ -38,7 +38,7 @@ index GeneName
 
 The files needed for calculating the mutex and coverage scores are:
 
-1. Gene and its list of patients where that gene is mutated:
+1. Gene and the list of patients where that gene is mutated:
 The file is located at data/genes_vs_patients_indices_gen_paran.txt
 
 ```
@@ -46,7 +46,7 @@ RNF14	109	241	...
 UBE2Q1	581	837	...
 ....
 ```
-The patients are referred by their IDs.
+The patients are referred to with their IDs.
 
 
 2. The patients name to patient ID mapping:
@@ -101,7 +101,7 @@ sh evaluate_all.sh
 
 The 'execute_all.sh' file will output modules of genes in the 'connected_components_isolarge/mexcowalk' folder.
 
-The 'evaluate_all.sh' file will output cosmic overlap, number of modules, average and total counts of mutex, coverage and density as well as weighted average values of mutex, inverse coverage and density. 
+The 'evaluate_all.sh' file will output cosmic overlap, number of modules, average and total counts of mutex, coverage and density as well as weighted average values of mutex, inverse coverage and density. The files can be found in 'out/evaluation_tab'
 
 The evaluation file can also be run with multiple models and compared to MEXCOwalk. Simply store the models in 'out/connected_components_isolarge/model_x' and add the model name to the evaluations section in the evaluation file as follows:
 
