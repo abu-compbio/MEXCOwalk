@@ -103,7 +103,7 @@ The 'execute_all.sh' file will output modules of genes in the 'connected_compone
 
 The 'evaluate_all.sh' file will output cosmic overlap, number of modules, average and total counts of mutex, coverage and density as well as weighted average values of mutex, inverse coverage and density. 
 
-The evaluation file can also be run with multiple models and compared to MEXCOwalk. Simply store the models in 'out/connected_component_isolarge/model_x' and add the model name to the evaluations section in the evaluation file as follows:
+The evaluation file can also be run with multiple models and compared to MEXCOwalk. Simply store the models in 'out/connected_components_isolarge/model_x' and add the model name to the evaluations section in the evaluation file as follows:
 
 ```
 -m mexcowalk model_1 model_2 model_3
