@@ -75,7 +75,6 @@ the file is located at  data/pan12gene2freq.txt. the file was downloaded from [h
 A1BG 0.00353697749196
 A2M 0.0128617363344
 A4GALT 0.00064308681672
-
 ```
 
 ### Cosmic genes
