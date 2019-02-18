@@ -237,7 +237,6 @@ def generate_eval_files(path_pre = "../out/evaluation_tab/"):
 
 # calculate weighted mutex, coverage and density scores
 def calculate_weighted_scores():
-
     evals = [ 'iwavg_cov', 'wavg_mutex', 'wavg_density']
     evals_pos = [1, 2, 4]
 
@@ -318,8 +317,8 @@ def calculate_product_iwcov_wmex():
 
     top_genes_to_read = args.numstart - args.numend + args.stepsize
 
-    iwcov_df = pd.read_table(filepath_iwcov, nrows=top_genes_to_read / args.stepsize, index_col=0)
-    wmex_df = pd.read_table(filepath_wmex, nrows=top_genes_to_read / args.stepsize, index_col=0)
+    iwcov_df = pd.read_table(filepath_iwcov, nrows=top_genes_to_read / args.stepsize, index_col=0, na_values=' ')
+    wmex_df = pd.read_table(filepath_wmex, nrows=top_genes_to_read / args.stepsize, index_col=0, na_values=' ')
 
     iwcov_df.drop(iwcov_df.columns[len(iwcov_df.columns) - 1], axis=1, inplace=True)
     wmex_df.drop(wmex_df.columns[len(wmex_df.columns) - 1], axis=1, inplace=True)
